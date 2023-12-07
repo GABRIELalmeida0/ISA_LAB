@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+Vagrant.configure(2) do |config|
+
+  config.vm.define "debian-01" do |node|
+    node.vm.box = 'debian/bullseye64'
+    node.vm.hostname = "vm-01"
+    node.vm.network "private_network", ip: "192.168.56.2"
+    node.vm.network "private_network", ip: "10.0.1.1", virtualbox__intnet:true
+    
+    node.vm.provision 'shell', path: "provision/debian-vm01.sh"
+    node.vm.provider "virtualbox" do |v|
+      v.name = "vm-01"
+      v.memory = 1024
+      v.cpus = 1
+      
+    end
+  end
+
+  config.vm.define "debian-02" do |node|
+    node.vm.box = 'debian/bullseye64'
+    node.vm.hostname = "vm-02"
+    node.vm.network "private_network", ip: "192.168.56.3"
+    node.vm.network "private_network", ip: "10.0.1.2", virtualbox__intnet:true
+    node.vm.provision 'shell', path: "provision/debian-vm02.sh"
+    node.vm.provider "virtualbox" do |v|
+      v.name = "vm-02"
+      v.memory = 1024
+      v.cpus = 1
+      
+    end
+  end
+end
