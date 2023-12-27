@@ -71,3 +71,4 @@ GRUB_CMDLINE_LINUX=""
 #GRUB_INIT_TUNE="480 440 1"
 EOL
 update-grub
+shutdown now
