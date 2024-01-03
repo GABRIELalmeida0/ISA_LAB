@@ -1,0 +1,11 @@
+auto lo
+iface lo inet loopback
+
+auto interface1
+iface interface1 inet network
+
+auto interface2
+iface interface2 inet network
+
+auto interface3
+iface interface3 inet network

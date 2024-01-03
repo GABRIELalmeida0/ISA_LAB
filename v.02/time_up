@@ -1,0 +1,23 @@
+baixar .ova -> 14.32s
+subir .ova no vb -> 16.74s
+senha de root das vms é "vagrant"
+
+instalar net-tools
+
+
+/etc/network/interfaces
+
+auto interface1
+iface interface1 inet modo de rede
+
+auto interface2
+iface interface2 inet modo de rede
+
+auto interface3
+iface interface3 inet modo de rede
+
+teste do NAT
+
+mudar o nome das interfaces enp0s
+
+instalar vim
